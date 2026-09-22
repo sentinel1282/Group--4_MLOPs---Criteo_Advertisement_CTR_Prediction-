@@ -1,0 +1,10 @@
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+*.pyc
+criteo-data/
+*.txt.gz
+dac.tar.gz
+train.txt
+test.txt
+.kaggle/

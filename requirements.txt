@@ -1,0 +1,7 @@
+# Preinstalled on SageMaker notebook instances (conda_python3 kernel):
+#   sagemaker>=2.150, boto3, pandas>=1.5, numpy, pyarrow, matplotlib, seaborn, scikit-learn
+# Only needed for Option A data download in notebook 01:
+kaggle
+# Local development / CI:
+pytest>=7
+nbformat
