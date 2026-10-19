@@ -1,10 +1,32 @@
-__pycache__/
-.ipynb_checkpoints/
-.pytest_cache/
-*.pyc
-criteo-data/
+# Data never belongs in the repository - it lives in S3 (see docs/data.md).
+*.csv
+*.parquet
+*.tar.gz
 *.txt.gz
-dac.tar.gz
-train.txt
-test.txt
-.kaggle/
+data/
+criteo-data/
+
+# Generated locally by the notebooks and tools.
+artifacts/dry_run/
+artifacts/model_eval/
+artifacts/evaluation.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Never commit credentials.
+.env
+*.pem
+credentials

@@ -1,7 +1,23 @@
-# Preinstalled on SageMaker notebook instances (conda_python3 kernel):
-#   sagemaker>=2.150, boto3, pandas>=1.5, numpy, pyarrow, matplotlib, seaborn, scikit-learn
-# Only needed for Option A data download in notebook 01:
-kaggle
-# Local development / CI:
+# Runtime for the notebooks and the SageMaker jobs.
+# On a SageMaker notebook instance (conda_python3) most of these are preinstalled;
+# the pins below are what CI and local development need.
+
+# --- core data + modelling ------------------------------------------------
+numpy>=1.23
+pandas>=1.5
+pyarrow>=11          # Parquet read/write for the curated zone and splits
+xgboost>=1.7         # local scoring in scripts/evaluate.py and the dry run
+matplotlib>=3.6      # every figure in notebooks and reports/
+
+# --- AWS ------------------------------------------------------------------
+# Not installed in CI: the workflow runs without an AWS account on purpose.
+# Uncomment locally, or rely on the SageMaker image, to run the notebooks.
+# sagemaker>=2.190
+# boto3>=1.28
+
+# --- data acquisition -----------------------------------------------------
+# Only needed for the Kaggle download path in notebook 01.
+# kaggle
+
+# --- development ----------------------------------------------------------
 pytest>=7
-nbformat
